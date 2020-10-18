@@ -8,11 +8,11 @@ import com.alibaba.csp.sentinel.slots.block.BlockException;
  * @date 2020/10/18 12:42 下午
  */
 public class ServiceFallBack {
-    public String allFallBack(){
+    public static String allFallBack(){
         return "全局自定义fallback";
     }
 
-    public String fallBackA(){
+    public static String fallBackA(){
         return "自定义fallback";
     }
 

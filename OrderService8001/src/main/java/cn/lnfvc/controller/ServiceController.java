@@ -1,8 +1,9 @@
 package cn.lnfvc.controller;
 
+import cn.lnfvc.fallback.HandlerExpection;
+import cn.lnfvc.fallback.ServiceFallBack;
 import cn.lnfvc.service.OrderService;
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
-import com.alibaba.csp.sentinel.slots.block.BlockException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,19 +25,16 @@ public class ServiceController {
     @Value("${server.port}")
     public String port;
 
-    @GetMapping(value = "testA")
-    @SentinelResource(value = "test",
-            fallback = "fallback",
-            blockHandler = "blockhandler"
+    @GetMapping(value = "/serviceTestA")
+    @SentinelResource(value = "serviceTestA",
+            fallbackClass = ServiceFallBack.class,
+            fallback = "allFallBack",
+            blockHandler = "blockhandler",
+            blockHandlerClass = HandlerExpection.class
     )
-    public String testA(){
-        return orderService.testA()+" ------- "+port;
+    public String serviceTestA(){
+        return orderService.serviceTestA()+" ------- "+port;
     }
-    public String fallback(){
-        return "OrderService"+port+"异常，暂不可用";
-    }
-    public String blockhandler(BlockException exception){
-        return "block";
-    }
+
 
 }

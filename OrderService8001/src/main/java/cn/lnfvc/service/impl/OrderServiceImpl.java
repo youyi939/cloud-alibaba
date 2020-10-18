@@ -14,7 +14,7 @@ public class OrderServiceImpl implements OrderService {
 
 
     @Override
-    public String testA() {
+    public String serviceTestA() {
         return "TestA";
     }
 

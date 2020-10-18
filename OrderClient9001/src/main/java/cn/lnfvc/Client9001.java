@@ -15,5 +15,12 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 public class Client9001 {
     public static void main(String[] args) {
         SpringApplication.run(Client9001.class,args);
+        StartTime startTime = new StartTime();
+        startTime.getStartTime("Client9001");
     }
 }
+
+
+
+
+

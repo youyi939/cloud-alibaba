@@ -9,5 +9,5 @@ import org.springframework.stereotype.Service;
  */
 
 public interface OrderService {
-    public String testA();
+    public String serviceTestA();
 }
