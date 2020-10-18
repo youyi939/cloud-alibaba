@@ -1,0 +1,3 @@
+# Project exclude paths
+/OrderPojo/target/
+/OrderService8001/target/

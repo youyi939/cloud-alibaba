@@ -1,0 +1,20 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: cloud-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: www.cjlly.com:8848
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: 127.0.0.1:8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
