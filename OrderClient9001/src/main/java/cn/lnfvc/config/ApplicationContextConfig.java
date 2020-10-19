@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
  * @author: KenChen
  * @date 2020/10/18 8:40 下午
  */
-@Component
+//@Component                                    //RestTemplate
 public class ApplicationContextConfig {
     @Bean
     @LoadBalanced
